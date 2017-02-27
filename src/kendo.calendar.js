@@ -18,6 +18,7 @@ var __meta__ = { // jshint ignore:line
         keys = kendo.keys,
         parse = kendo.parseDate,
         adjustDST = kendo.date.adjustDST,
+        getDate = kendo.date.getDate,
         weekInYear = kendo.date.weekInYear,
         extractFormat = kendo._extractFormat,
         template = kendo.template,
@@ -1386,6 +1387,10 @@ var __meta__ = { // jshint ignore:line
 
         if (options.dates === null) {
             options.dates = [];
+        }
+
+        if (options.min) {
+            options.min = getDate(options.min);
         }
     }
 
